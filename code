@@ -1,0 +1,40 @@
+
+    public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		long q = input.nextInt(); // get the queries
+		
+		
+		long  costs=0L; //the answer of the costs 
+		for(int i = 0; i < q; i++){
+			
+			long  two =0L; // liters of type two 
+			Long n = input.nextLong(); // get the liters 
+			long  a = input.nextLong(); // get the price of type one 
+			Long b = input.nextLong(); // get the price of type two 
+			double test = (double)b/ (double)a;
+			
+			 if(a < b && test >2){
+				costs=0;
+				a*=n;
+				costs=a;
+				System.out.println(costs);
+			}
+			else {
+				costs=0;
+				Long d = n/2;
+				double dd = n/2;
+				two= 2 * d;
+				b*=d;
+				
+				costs+=b;
+				n-=two;
+
+				a*=n;
+				costs+=a;
+				System.out.println(costs);
+			}
+
+		}
+		
+		
+    }
